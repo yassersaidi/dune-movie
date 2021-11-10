@@ -1,0 +1,236 @@
+@font-face {
+    font-family: "dune";
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url(../webfonts/rocketwildness.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "momcakethin";
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url(../webfonts/momcakethin.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "momcakebold";
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url(../webfonts/momcakebold.otf) format("opentype");
+}
+
+@keyframes scaleanim {
+    0% {
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        -moz-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+        -o-transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #2d261c;
+    background-color: #EEE;
+    font-family: 'momcakethin', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-around;
+}
+
+.movie {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/movie.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    padding: 0 1%;
+    flex-flow: column;
+    align-content: flex-start;
+    height: 100%;
+    justify-content: space-evenly;
+    background: linear-gradient(268deg, transparent 27%, #72734d8a 45%, rgb(163 160 107 / 92%) 55%)
+}
+
+.mb {
+    margin-bottom: 20px;
+}
+
+.ml {
+    margin-left: 10px
+}
+
+.mr {
+    margin-right: 20px;
+}
+
+h1 > a {
+    font-family: "dune";
+    font-size: calc(8vw + 20px);
+}
+
+.rate {
+    font-family: "momcakebold";
+    font-size: 14px;
+}
+
+.down-details {
+    color: rgb(18 17 17 / 92%);
+    font-size: 22px;
+
+}
+
+.down-details span {
+    font-family: "momcakebold";
+}
+
+.out-movie {
+    font-family: "momcakebold";
+    font-size: 19px;
+}
+
+.out-movie .n {
+    font-family: "momcakethin";
+}
+
+
+p {
+    width:50%;
+    font-size: 24px;
+    font-family: revert;
+    text-align: left;
+    line-height: 1.5;
+
+}
+
+a {
+    color: #2d261c;
+    text-decoration: none;
+    position: relative;
+
+}
+
+button {
+    cursor: pointer;
+}
+
+.la {
+    padding: 1px 16px;
+    height: 40px;
+    line-height: 35px;
+}
+
+button.play,
+.la {
+    border: 1px solid #000;
+    background: transparent;
+    color: #000;
+
+}
+
+i {
+    border-radius: 100px;
+    padding: 5px;
+}
+
+i,
+button.play {
+    transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -ms-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+}
+
+button.play {
+    padding: 21px 33px;
+    font-size: 22px;
+}
+
+button.play:hover {
+    box-shadow: 0px 0px 10px 0px #2d261c,
+        0px 0px 20px 0px #2d261c;
+}
+
+button:active>i,
+button:focus>i {
+    animation: scaleanim .2s;
+    -webkit-animation: scaleanim .2s;
+}
+
+a:not(.title):after {
+    content: "";
+    width: 0%;
+    position: absolute;
+    bottom: -4px;
+    left: 2px;
+    height: 2px;
+    background-color: #2d261c;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+a:hover::after{
+    width: 100%;
+}
+
+hr {
+    width: 46%;
+    height: 1px;
+    background: #2d261c;
+    border: none;
+}
+
+.sub-options button {
+    background: transparent;
+    border: none;
+    margin: 0 12px;
+    font-size: 30px;
+    color: #2d261c;
+}
+@media (max-width:500px){
+    .content{
+        background: linear-gradient(0deg, transparent 27%, #72734d8a 45%, rgb(163 160 107 / 92%) 55%)
+    }
+    p{
+        width:100%
+    }
+}
